@@ -2,7 +2,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const path = require('path');
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 const dotenv = require('dotenv');
@@ -12,7 +12,6 @@ app.use(express.json());
 
 app.use(cors());
 
-app.use(express.static(path.join(__dirname, '../Client/build')));
 // MongoDB Connection
 const mongoURI= process.env.MONGODB_URI;
 

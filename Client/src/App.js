@@ -45,7 +45,7 @@ const Counter = () => {
 
   const fetchCounter = useCallback(async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/counter');
+      const response = await axios.get('https://hook-react.vercel.app/api/counter');
       dispatch({ type: 'SetCount', count: response.data.count });
     } catch (err) {
       console.error('Error fetching counter:', err);
@@ -58,7 +58,7 @@ const Counter = () => {
 
   const incrementCounter = useCallback(async () => {
     try {
-      await axios.post('http://localhost:5000/api/counter/increment');
+      await axios.post('https://hook-react.vercel.app/api/counter/increment');
       dispatch({ type: 'IncrementCount' });
     } catch (err) {
       console.error('Error incrementing counter:', err);
@@ -67,7 +67,7 @@ const Counter = () => {
 
   const decrementCounter = useCallback(async () => {
     try {
-      await axios.post('http://localhost:5000/api/counter/decrement');
+      await axios.post('https://hook-react.vercel.app/api/counter/decrement');
       dispatch({ type: 'DecrementCount' });
     } catch (err) {
       console.error('Error decrementing counter:', err);
@@ -92,7 +92,7 @@ const MyCounter = () => {
 
   const fetchMyCounter = useCallback(async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/counter');
+      const response = await axios.get('https://hook-react.vercel.app/api/counter');
       dispatch({ type: 'SetMyCount', My_Count: response.data.count1 });
     } catch (err) {
       console.error('Error fetching MyCounter:', err);
@@ -105,7 +105,7 @@ const MyCounter = () => {
 
   const incrementMyCounter = useCallback(async () => {
     try {
-      await axios.post('http://localhost:5000/api/counter/my-increment');
+      await axios.post('https://hook-react.vercel.app/api/counter/my-increment');
       dispatch({ type: 'IncrementMyCount' });
     } catch (err) {
       console.error('Error incrementing MyCounter:', err);
@@ -114,7 +114,7 @@ const MyCounter = () => {
 
   const decrementMyCounter = useCallback(async () => {
     try {
-      await axios.post('http://localhost:5000/api/counter/my-decrement');
+      await axios.post('https://hook-react.vercel.app/api/counter/my-decrement');
       dispatch({ type: 'DecrementMyCount' });
     } catch (err) {
       console.error('Error decrementing MyCounter:', err);
