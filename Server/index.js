@@ -5,14 +5,18 @@ const cors = require('cors');
 const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 5000;
+const dotenv = require('dotenv');
 
+dotenv.config();
 app.use(express.json());
 
 app.use(cors());
 
 app.use(express.static(path.join(__dirname, '../Client/build')));
 // MongoDB Connection
-mongoose.connect('mongodb+srv://adan:bhavani@cluster0.wtbwowp.mongodb.net/counter_db?retryWrites=true&w=majority&appName=Cluster0')
+const mongoURI= process.env.MONGODB_URI;
+
+mongoose.connect(mongoURI)
 .then(() => console.log('Connected to MongoDB'))
 .catch(err => console.error('Error connecting to MongoDB:', err));
 
